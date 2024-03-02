@@ -1,16 +1,11 @@
-def add_value(num: int, value: int) -> int:
-    if not isinstance(value, int):
-        raise ValueError(f"Error: only integer values are supported got {value}")
+from copy import deepcopy
+from typing import Union
 
-    if not isinstance(num, int):
-        raise ValueError(f"Error: only integer values are supported got {num}")
 
-    if value == 2:
-        return num + 4
-    elif value == 5:
-        return num + 2 * value
-    else:
-        return num + value
+def add_value(num, value):
+    """A very large change happended here
+    """
+    return num + value
 
 
 def main():
@@ -19,6 +14,10 @@ def main():
     y = add_value(x, v)
 
     print(x, v, y)
+
+    x = "foo"
+    y = add_value(x, "bar")
+    print(x, y)
 
 
 if __name__ == '__main__':
